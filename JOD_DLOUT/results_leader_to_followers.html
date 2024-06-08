@@ -1,0 +1,17 @@
+{{ block title }}
+
+<h1> Resultado de tu líder </h1> 
+
+{{ endblock }}
+
+{{ block content }}
+
+<p> El lider de tu grupo ha disminuído en <strong> ${{ player.agression_lider }}CLP</strong> al líder del grupo contrario</p>
+
+<br>
+
+<p>Presiona "next" para tomar tu decisión</p>
+
+{{ next_button }}
+
+{{ endblock }}

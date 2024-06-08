@@ -1,0 +1,39 @@
+<h1> Resultado de tu líder </h1> 
+
+<br>
+
+{{ endblock }}
+
+
+{{ block content }}
+
+<input type="hidden" name="currentTimeFollower" id="id_currentTimeFollower"/>
+
+<script>
+   function record_current_time(){
+        var current_time = new Date();
+        current_time = current_time.getTime();
+        document.getElementById("id_currentTime").setAttribute("value", current_time);
+    }
+    window.onload = function() {
+        record_current_time();
+    }
+</script>
+
+<div style="padding: 10px; background-color: #ccf2ff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h3 style="margin: 0;">El lider de tu grupo ha disminuído en <strong><span style="color: green;">${{ player.agression_lider }}</span> CLP</strong> al líder del grupo contrario</h3>
+</div>
+
+<br>
+    
+<br>
+
+<p>Ahora por favor tome una decisión:</p>
+
+{{ formfields }}
+
+<br>
+
+{{ next_button }}
+
+{{ endblock }}

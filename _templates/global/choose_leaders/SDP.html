@@ -1,0 +1,36 @@
+{{ extends "global/Page.html" }}
+
+{{ block content }}
+    <h2>Por favor, indique su nivel de acuerdo con las siguientes afirmaciones:</h2>
+    <form method="post">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Pregunta</th>
+                    <th>1. No me describe nada</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4. Algunas veces</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7. Me describe completamente</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ for field in form }}
+                    <tr>
+                        <td>{{ field.label }}</td>
+                        {{ for value, label in field.field.choices }}
+                            <td>
+                                <label>
+                                    <input type="radio" name="{{ field.name }}" value="{{ value }}">
+                                </label>
+                            </td>
+                        {{ endfor }}
+                    </tr>
+                {{ endfor }}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{{ endblock }}

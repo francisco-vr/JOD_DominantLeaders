@@ -1,0 +1,35 @@
+{{ block title }}
+    <h1><strong>Instrucciones</strong></h1>
+{{ endblock }}
+
+{{ block content }}
+    <p> <strong>Gracias por participar de este experimento.</strong></p>
+
+    <p> Se te pagará después del experimento. Ningún otro participante sabrá cuando has ganado. Se te pagarán $4000 CLP por tu participación,
+        además de ganancias adicionales dentro del experimento</p>
+
+    <p>El experimento consiste en 10 rondas de tomas de decisión</p>
+
+     <p>Antes del la primera ronda  {{ if player.group_role == "lider" }} serás asignado para con el lìder del equipo opuesto {{ else }} serás 
+    emparejado para jugar contra un seguidor aleatorio del grupo opositor</p>
+
+    {{ endif }}
+
+    <p> Usted no sabrá la identidad de la pareja con la que juega, y él tampoco sabrá la suya, pero sabá que es la misma persona por 10 rondas</p>
+
+    <p> Al comienzo usted presionará un botón en el que aparecerá aleatoriamente un número del 1 al 3. Este número indica la cantidad de tareas
+        a realizar en cada ronda. Estas tareas son acerca de la evaluación de emociones en distintas frases. Usted recibirá $800CLP por cada ronda de tareas.
+    </p>
+
+    <p>Al completar su tarea, tendrá la oportunidad de destruir los $800CLP a la pareja con la que está jugando.</p>
+
+    <p>{{if player.group_role == "lider }} Su decisión como líder será informada a los seguidores de su propio grupo. 
+        {{ else }} Usted verá cuánto dinero destruyó el líder de su equipo, y luego tomará su decisión {{ endif }}. Una vez que usted y la pareja del equipo contrario
+        hayan tomado una decisión, se les informará cuánto se les destruyó y su ganancia final en la ronda. </p>
+
+
+
+{{ next_button }}
+
+{{ endblock }}
+

@@ -1,0 +1,38 @@
+{{ block content }}
+
+
+<input type="hidden" name="currentTimeLeader" id="id_currentTimeLeader"/>
+
+<script>
+   function record_current_time(){
+        var current_time = new Date();
+        current_time = current_time.getTime()
+        document.getElementById("id_currentTime").setAttribute("value", current_time)
+}
+    window.onload = function() {
+    record_current_time();
+    }
+</script>
+
+<p> Felicitaciones!</p>
+
+<br> 
+
+<p> Usted ha ganado <strong>$800 CLP</strong> por realizar sus tareas</p>
+
+<br>
+
+<p>Ahora por favor tome una decisión:
+    <br>
+
+    ¿Cuánto de la ganancia del jugador del equipo contrario quiere destruir?
+</p>
+
+{{ formfields }}
+
+<br>
+
+{{ next_button }}
+
+{{ endblock }}
+

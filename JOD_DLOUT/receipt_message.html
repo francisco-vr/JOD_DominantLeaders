@@ -1,0 +1,21 @@
+{{ block title }} <h2><strong> Mensaje de tu lider </strong></h2> 
+
+<br>
+
+{{ endblock }}
+
+
+{{ block content }}
+
+    <p>Tu lider ha enviado el siguiente mensaje: </p>
+
+    <br> 
+
+    <h3><strong>{{ player.leader_message }}</strong></h3>
+
+    <br>
+    <br>
+
+    {{ next_button }}
+
+{{ endblock }}

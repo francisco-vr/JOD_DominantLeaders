@@ -1,0 +1,22 @@
+{{ block title }} <h1> Has terminado la ronda Nº  {{ round_number }}</h1> {{ endblock }}
+
+
+{{ block content }}
+
+<p> tus resultados de ronda son los siguientes:
+
+- Puntos ganados: <p style="color: forestgreen;"{{ player.a_points }} </p>
+- Puntos destruidos: <p style="color: forestgreen;" {{ player.b_points }} </p>
+- Cantidad de cuentas de protección: <p style="color: forestgreen;" {{ player.c_point }} veces </p>
+
+
+</p>
+
+<br>
+<br>
+
+<p> A continuación verás los puntajes de tus seguidores </p>
+
+{{ next_button }}
+
+{{ endblock }}
