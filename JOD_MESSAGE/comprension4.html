@@ -1,0 +1,36 @@
+{{ block title }}
+
+<h2><strong>Pregunta N°4</strong></h2>
+
+{{endblock  }}
+
+
+{{ block content }}
+
+<p style="font-size: 24px"; align="justify">Por favor considere la situación del ejemplo:</p>
+
+
+<p style="font-size: 24px"; align="justify"> Dentro del estudio, a un jugador se le pagó al azar en base a sus decisiones del juego de la destrucción. La ronda que se pagará será la 12,
+en la cual se le destruyeron 2000 pesos.</p>
+
+<p style="font-size: 24px"; align="justify">¿Cuál es su pago final total?</p>
+
+{{ if player.intentos_fallidos4 >= 2 }}
+
+<p>Por favor levante su mano y espere a que el experimento continúe.</p>
+<div>
+    {{formfield 'password_input4'}}
+</div>
+
+{{ else }}
+
+{{formfield 'comprension4'}}
+
+
+{{ endif }}
+
+{{next_button}}
+
+
+
+{{ endblock }}

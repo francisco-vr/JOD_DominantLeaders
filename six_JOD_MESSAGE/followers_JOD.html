@@ -1,0 +1,134 @@
+{{ block title }} 
+<h1 style="font-size: 34px;"><strong><center>Ronda N° {{ player.round_number }}: Resultado de tu líder y Juego de Destrucción</center></strong></h1>
+<br>
+
+{{ endblock }}
+
+{{ block content }}
+
+<style>
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px; /* Espacio entre filas */
+        justify-content: center; /* Centra el contenido de las filas */
+    }
+
+    .col-md-6 {
+        flex: 0 0 48%; /* Ajusta el ancho de las columnas para que ocupen la mitad del espacio */
+        padding: 1px;
+    }
+
+    .col-md-12 {
+        flex: 0 0 96%; /* Ajusta el ancho de la fila inferior para que coincida con la suma de las columnas superiores */
+        padding: 1px;
+    }
+
+    .box {
+        padding: 5px;
+        border: 2px solid #4A148C; /* Borde púrpura oscuro */
+        border-radius: 8px;
+        background-color: #FFF9C4; /* Fondo amarillo atenuado */
+        color: #000000; /* Texto negro */
+        font-size: 30px; /* Tamaño de fuente aumentado */
+        font-weight: bold; /* Negrita para destacar */
+        text-align: center; /* Centra el texto */
+        margin-bottom: 20px; /* Espacio inferior */
+        height: 85%;
+    }
+
+    .message-icon, .aggression-icon {
+        font-size: 36px;
+        vertical-align: middle;
+        margin-right: 10px;
+        color: #4A148C; /* Color del icono */
+    }
+
+    .custom-range {
+        width: 100%; /* Ajusta el ancho del slider al 100% del contenedor */
+        height: 30px; /* Ajusta la altura del slider */
+        appearance: none; /* Elimina los estilos nativos del navegador */
+        background: #ddd; /* Color de fondo del slider */
+        outline: none; /* Elimina el borde predeterminado del slider */
+        opacity: 1; /* Ajusta la opacidad del slider */
+        transition: opacity .15s ease-in-out; /* Añade una transición suave */
+        border-radius: 5px; /* Añade un borde redondeado al slider */
+    }
+
+    .custom-range::-webkit-slider-thumb {
+        appearance: none; /* Elimina los estilos nativos del navegador */
+        width: 20px; /* Ajusta el ancho del control deslizante */
+        height: 10px; /* Ajusta la altura del control deslizante */
+        background-color: #007bff; /* Color de fondo del control deslizante */
+        cursor: pointer; /* Cambia el cursor a una mano */
+        border-radius: 5px; /* Añade un borde redondeado al control deslizante */
+    }
+
+    .custom-range::-moz-range-thumb {
+        width: 20px; /* Ajusta el ancho del control deslizante para Firefox */
+        height: 30px; /* Ajusta la altura del control deslizante para Firefox */
+        background-color: #007bff; /* Color de fondo del control deslizante para Firefox */
+        cursor: pointer; /* Cambia el cursor a una mano para Firefox */
+        border-radius: 5px; /* Añade un borde redondeado al control deslizante para Firefox */
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-between {
+        justify-content: space-between; /* Asegura que los labels estén en los extremos */
+    }
+
+    .mt-3 {
+        margin-top: 5rem; /* Añade un margen superior */
+    }
+</style>
+
+<!-- Fila superior -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="box">
+            <span>Tu líder te ha enviado el siguiente mensaje:</span>
+            <h4><strong><span class="message-icon">🔔</span>"{{ player.leader_message }}"</strong></h4>
+        </div>
+    </div>
+</div>
+
+<!-- Fila inferior -->
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box" style="background-color: #f8f9fa; color: #000; border-color: #ccc; font-size: 24px;">
+            <h3>Ahora por favor tome una decisión:</h3>
+            <div class="form-group">
+                <label for="id_agression">¿Cuánto dinero del jugador del otro debiese destruir usted?</label>
+                <input type="range" class="custom-range" id="id_agression" name="agression" min="0" max="7000" step="100" value="{{ player.agression }}">
+                <div class="mt-3">
+                    <div class="d-flex justify-content-between">
+                        <div>0</div>
+                        <div>7000</div>
+                    </div>
+                    <div id="sliderValue" style="font-size: 18px; font-weight: bold; text-align: center; margin-top: 10px;">{{ player.agression }}</div>
+                </div>
+            </div>
+            <script>
+                // JavaScript para actualizar dinámicamente el valor del slider
+                var slider = document.getElementById("id_agression");
+                var sliderValue = document.getElementById("sliderValue");
+
+                sliderValue.innerHTML = slider.value;
+
+                slider.oninput = function() {
+                    sliderValue.innerHTML = this.value;
+                };
+            </script>
+        </div>
+    </div>
+</div>
+
+<br>
+
+{{ next_button }}
+
+{{ endblock }}

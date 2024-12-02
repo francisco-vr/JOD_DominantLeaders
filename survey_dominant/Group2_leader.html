@@ -1,0 +1,92 @@
+{{ block title }} 
+<h1 style="font-size: 34px; text-align: center;"><strong>Has sido elegido como líder</strong></h1>
+
+<br>
+{{ endblock }}
+
+{{ block content }}
+
+<style>
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px; /* Espacio entre filas */
+        justify-content: center; /* Centra el contenido de las filas */
+    }
+
+    .col-md-6 {
+        flex: 0 0 48%; /* Ajusta el ancho de las columnas para que ocupen la mitad del espacio */
+        padding: 10px;
+    }
+
+    .col-md-12 {
+        flex: 0 0 96%; /* Ajusta el ancho de la fila inferior para que coincida con la suma de las columnas superiores */
+        padding: 10px;
+    }
+
+    .box {
+        padding: 20px;
+        border: 2px solid #4A148C; /* Borde púrpura oscuro */
+        border-radius: 8px;
+        background-color: #e3f2fd; /* Fondo celeste tenue */
+        color: #000000; /* Texto negro */
+        font-size: 24px; /* Tamaño de fuente */
+        font-weight: bold; /* Negrita para destacar */
+        text-align: center; /* Centra el texto */
+        margin-bottom: 20px; /* Espacio inferior */
+        height: 100%;
+    }
+
+    .message-icon {
+        font-size: 36px;
+        vertical-align: middle;
+        margin-right: 10px;
+        color: #4A148C; /* Color del icono */
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-between {
+        justify-content: space-between; /* Asegura que los labels estén en los extremos */
+    }
+
+    .mt-3 {
+        margin-top: 1rem; /* Añade un margen superior */
+    }
+
+</style>
+
+<!-- Fila superior -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="box">
+            <p>• Basado en tus elecciones, tu prefieres las pinturas de Kandinki</p>
+            <p>• Además <strong>Has sido elegido como líder del equipo Kandinski</strong></p>
+            <p>• Jugarás contra el líder del <strong>equipo Klee</strong></p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box" style="background-color: transparent; border: none;">
+            <img src="{% static 'leader.webp' %}" alt="Imagen del Líder" style="max-width: 100%;">
+        </div>
+    </div>
+</div>
+
+<!-- Fila inferior -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="box" style="background-color: #FFF9C4; color: #000; border-color: #ccc;">
+            {{ if "EXAMPLE" in session.config.name }}
+            <h3 style="font-size: 24px;"> <strong>Los miembros de tu equipo podrán ver cuánto dinero has destruído en cada ronda</strong></h3>
+            {{ else }}
+            <h3 style="font-size: 24px;"> <strong>Podrás enviar mensajes a los miembros de tu equipo en cada ronda</strong></h3>
+            {{ endif }}
+        </div>
+    </div>
+</div>
+
+{{ next_button }}
+
+{{ endblock }}

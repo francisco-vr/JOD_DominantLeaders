@@ -1,0 +1,91 @@
+{% load static %}
+
+{{ block content }}
+
+
+<div class="question">
+    <h1><strong>5° Par: Por favor elija cuál pintura prefiere haciendo click en la opción "A" o "B"</strong></h2>
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imágenes Comparables</title>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Espacio entre las imágenes */
+        margin-bottom: 20px; /* Espacio entre imágenes y la pregunta */
+    }
+
+    .image-button {
+        position: relative;
+        width: 900px;
+        height: 400px;
+        cursor: pointer;
+        border: 2px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .image-button img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Sombra semitransparente */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-button:hover .overlay {
+        opacity: 1;
+    }
+
+    .question {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="image-container">
+    <form method="post">
+        <button type="submit" name="paint5" value="kandinsky" class="image-button">
+            <img src="{% static 'kandinsky5_yellow-red-blue.jpg' %}" alt="Pintura A">
+            <div class="overlay">A</div>
+        </button>
+        <button type="submit" name="paint5" value="klee" class="image-button">
+            <img src="{% static 'klee5_RisingSun.jpg' %}" alt="Pintura B">
+            <div class="overlay">B</div>
+        </button>
+    </form>
+</div>
+
+{{ endblock }}
+

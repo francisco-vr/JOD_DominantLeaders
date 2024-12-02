@@ -1,0 +1,21 @@
+{{ block title }} <h2 style="font-size: 34px;">Resultado</h2>  {{endblock}}
+
+{{ block content }}
+
+{{ if player.agresion_guardada == 0}}
+
+<p style="font-size: 24px;"> El integrante del otro equipo <strong><p style="color: red; font-size: 24px;">no te ha destruído dinero</p></strong></p>
+
+{{ else }}
+
+<p style="font-size: 24px;"> El integrante del otro grupo te ha destruído <strong><p style="color: red; font-size: 24px;"> ${{ player.agresion_guardada }}</p></strong></p>
+
+{{ endif }}
+
+<p style="font-size: 24px;"> Tu pago final para esta ronda es: <strong><p style="color: green; font-size: 24px;"> ${{ player.endownment_final }}</p></strong></p>
+
+<br>
+
+{{ next_button }}
+
+{{ endblock }}

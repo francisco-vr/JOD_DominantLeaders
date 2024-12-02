@@ -1,0 +1,24 @@
+{{ block content }}
+<h3> Por favor resuelva la mayor cantidad de sumas correctas en {{C.TIME_OUT_SUMAS}} segundos</h3>
+<div id="sumas">
+    <h3> {{ sumando1 }} + {{ sumando2 }} </h3>
+</div>
+
+<input id="respuesta" type="number">
+<button type="button" onclick="sendValue()">Continuar</button>
+
+<script>
+    let respuesta = document.getElementById('respuesta');
+
+    function liveRecv(data) {
+      sumas.innerHTML += data.respuesta
+      sumas.innerHTML += '<h3>' + data.sumando1 + '+' + data.sumando2 + '</h3>';
+    }
+
+    function sendValue() {
+        liveSend(parseInt(respuesta.value));
+        respuesta.value = '';
+    }
+</script>
+
+{{ endblock }}

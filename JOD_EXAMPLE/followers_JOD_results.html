@@ -1,0 +1,18 @@
+{{ block title }} 
+
+<h2 style="font-size: 34px;"><strong>Resultado</h2></strong>
+<br>
+
+{{endblock}}
+
+{{ block content }}
+
+<p style="font-size: 24px;"> El integrante del otro grupo te ha destruído <strong><p style="color: red; font-size: 24px;"> ${{ player.agresion_guardada }}</p></strong>CLP</p>
+
+<p style="font-size: 24px;"> Tu pago final para esta ronda es: <strong><p style="color: green; font-size: 24px;"> {{ player.endownment_final }}</p></strong></p>
+
+<br>
+
+{{ next_button }}
+
+{{ endblock }}

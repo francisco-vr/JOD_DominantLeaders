@@ -1,0 +1,89 @@
+{{ block title }} 
+<h2 style="font-size: 34px;">Resultado y Envío de Mensaje</h2>  
+{{ endblock }}
+
+{{ block content }}
+
+<style>
+    .custom-btn {
+        background-color: #4A148C; /* Púrpura más oscuro */
+        color: white;
+        margin-bottom: 15px; /* Espacio entre los botones */
+        width: 100%; /* Asegura que los botones ocupen toda la columna */
+        font-size: 20px; /* Tamaño del texto en los botones */
+        padding: 15px 20px; /* Aumenta el tamaño de los botones */
+        font-weight: bold; /* Aplica negrita al texto */
+    }
+
+    .custom-btn:hover {
+        background-color: #38006b; /* Púrpura aún más oscuro al pasar el ratón */
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .col-md-6 {
+        flex: 0 0 48%; /* Ajusta el ancho de las columnas para que ocupen la mitad del espacio */
+    }
+    
+    .result-box, .message-box {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .result-box {
+        background-color: #f8f9fa;
+    }
+
+    .message-box {
+        background-color: #f1f1f1;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-6">
+        <!-- Primera fila: Destrucción y Pago Final -->
+        <div class="result-box">
+            <p style="font-size: 24px;">El líder del otro equipo te ha destruido <strong><span style="color: red; font-size: 24px;"> ${{ player.agresion_guardada }}</span></strong> CLP</p>
+            <p style="font-size: 24px;">Tu pago final es <strong><span style="color: green; font-size: 24px;"> ${{ player.endownment_final }}</span></strong></p>
+        </div>
+
+        <!-- Segunda fila: Promedio de Destrucción de Seguidores -->
+        <br>
+         {{ if player.round_number > 1}}<!-- Primera fila: Destrucción y Pago Final -->
+         <div class="result-box">
+            <p style="font-size: 24px;">Tu grupo destruyó <strong><span style="color: red; font-size: 24px;"> ${{promedio_grupal}}</span></strong> CLP en promedio la ronda anterior</p>
+        </div>
+        {{ endif }}
+    </div>
+
+    <div class="col-md-6">
+        <div class="message-box">
+            <p style="font-size: 24px;"><strong>Ahora, elija un mensaje para envías a sus compañeros de equipo:</strong></p>
+            <button class="btn custom-btn" type="button" onclick="selectMessage('Hay que destruirle dinero a la persona del otro grupo')">Hay que destruirle dinero a la persona del otro grupo</button>
+            <button class="btn custom-btn" type="button" onclick="selectMessage('Haz lo que prefieras con la persona del otro grupo')">Haz lo que prefieras con la persona del otro grupo</button>
+            <button class="btn custom-btn" type="button" onclick="selectMessage('Sugiero que le destruyas dinero a la persona del otro grupo')">Sugiero que le destruyas dinero a la persona del otro grupo</button>
+            <button class="btn custom-btn" type="button" onclick="selectMessage('No le destruyas dinero a la persona del otro grupo')">No le destruyas dinero a la persona del otro grupo</button>
+            <button class="btn custom-btn" type="button" onclick="selectMessage('Debes destruirle dinero a la persona del otro grupo')">Debes destruirle dinero a la persona del otro grupo</button>
+            <button class="btn custom-btn" type="button" onclick="selectMessage('Sugiero no destruir dinero a la persona del otro grupo')">Sugiero no destruir dinero a la persona del otro grupo</button>
+            <form method="post">
+                <input type="hidden" name="leader_message" id="leader_message" value="">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectMessage(message) {
+        document.getElementById("leader_message").value = message;
+        document.querySelector("form").submit();
+    }
+</script>
+
+{{ endblock }}
+

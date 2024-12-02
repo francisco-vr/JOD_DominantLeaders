@@ -1,0 +1,125 @@
+{{ block content }}
+
+<h3><strong><center>Habitualmente la gente se identifica como 'izquierda', 'derecha' o 'centro' para explicar su ideología política.</center></strong></h3> 
+    
+<br>
+
+<h4><strong><center>Indique cuál es su ideología siendo 1 'Muy de izquierda' y 10 'Muy de derecha'.</center></strong></h4>
+
+<br>
+<br>
+
+<form method="post">
+    <style>
+        /* Contenedor Flex para centrar la tabla */
+        .flex-container {
+            display: flex;
+            justify-content: center; /* Centra la tabla horizontalmente */
+            align-items: center; /* Centra la tabla verticalmente si es necesario */
+            height: 100%; /* Asegura que ocupe toda la altura del contenedor */
+            width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+        }
+
+        /* Estilo de la tabla */
+        table {
+            width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+            max-width: 800px; /* Establece un ancho máximo */
+            font-size: 14px; /* Reduce el tamaño de la fuente en la tabla */
+            table-layout: fixed; /* Hace que todas las columnas tengan el mismo ancho */
+            word-wrap: break-word; /* Ajustar el texto dentro de las celdas */
+        }
+
+        /* Aumentar el tamaño de los radio select */
+        input[type="radio"] {
+            transform: scale(1.5); /* Aumenta el tamaño de los radio buttons */
+            margin-right: 5px; /* Espacio adicional entre radio button y su etiqueta */
+        }
+
+        /* Aumentar el tamaño de las celdas */
+        td {
+            padding: 5px; /* Reduce el espaciado dentro de las celdas */
+            text-align: center; /* Centrar el contenido dentro de las celdas */
+            vertical-align: middle; /* Alinear verticalmente el contenido en el centro */
+            font-size: 12px; /* Reduce el tamaño de la fuente dentro de las celdas */
+        }
+
+        /* Estilo para la celda con la línea vertical */
+        .divider {
+            border-left: 2px solid black; /* Cambia el grosor y el color de la línea según prefieras */
+            padding-left: 10px; /* Espacio adicional entre la línea y el contenido de "Sin ideología" */
+        }
+
+        /* Específico para oTree */
+        .otree-content .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .otree-content table {
+            width: 100%;
+            max-width: 800px;
+            font-size: 14px; /* Reduce el tamaño de la fuente */
+            table-layout: fixed; /* Cambiado a 'fixed' para igualar el ancho de las columnas */
+        }
+
+        .otree-content td {
+            padding: 5px; /* Reduce el espaciado dentro de las celdas */
+            text-align: center;
+            vertical-align: middle;
+            font-size: 12px; /* Reduce el tamaño de la fuente dentro de las celdas */
+        }
+
+        .otree-content input[type="radio"] {
+            transform: scale(1.5);
+            margin-right: 5px;
+        }
+
+        .otree-content .divider {
+            border-left: 2px solid black;
+            padding-left: 10px;
+        }
+    </style>
+
+    <div class="flex-container">
+        <fieldset>
+            <table>
+                <tr>
+                    <td>1.<br>Muy<br>de<br>izquierda</td>
+                    <td>2.</td>
+                    <td>3.</td>
+                    <td>4.</td>
+                    <td>5.<br>Centro</td>
+                    <td>6.</td>
+                    <td>7.</td>
+                    <td>8.</td>
+                    <td>9.</td>
+                    <td>10.<br>Muy<br>de<br>derecha</td>
+                    <td class="divider">Sin<br>ideología</td> <!-- Clase para la línea divisoria -->
+                </tr>
+                <tr><td colspan="11"><hr></td></tr>
+                <tr>
+                    <td><input type='radio' name='ideologia' value='1'></td>
+                    <td><input type='radio' name='ideologia' value='2'></td>
+                    <td><input type='radio' name='ideologia' value='3'></td>
+                    <td><input type='radio' name='ideologia' value='4'></td>
+                    <td><input type='radio' name='ideologia' value='5'></td>
+                    <td><input type='radio' name='ideologia' value='6'></td>
+                    <td><input type='radio' name='ideologia' value='7'></td>
+                    <td><input type='radio' name='ideologia' value='8'></td>
+                    <td><input type='radio' name='ideologia' value='9'></td>
+                    <td><input type='radio' name='ideologia' value='10'></td>
+                    <td class="divider"><input type='radio' name='ideologia' value='0'></td> <!-- Clase para la línea divisoria -->
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+
+    <br>
+    <br>
+    <center> {{ next_button }} </center>
+</form>
+
+{{ endblock }}
+

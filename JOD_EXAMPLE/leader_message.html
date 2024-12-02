@@ -1,0 +1,58 @@
+
+{{ block content }}
+
+<style>
+    .custom-btn {
+        background-color: #6A1B9A; /* Púrpura oscuro */
+        color: white;
+        margin-bottom: 15px; /* Espacio entre los botones */
+    }
+
+    .custom-btn:hover {
+        background-color: #4A148C; /* Púrpura más oscuro al pasar el ratón */
+    }
+</style>
+
+<p style="font-size: 24px;"><strong>Envíe un mensaje a sus seguidores:</strong></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn custom-btn btn-block" type="button" onclick="selectMessage('Hay que destruirle dinero a la persona del otro grupo')">Hay que destruirle dinero a la persona del otro grupo'</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn custom-btn btn-block" type="button" onclick="selectMessage('Haz lo que prefieras con la persona del otro grupo')">Haz lo que prefieras con la persona del otro grupo</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn custom-btn btn-block" type="button" onclick="selectMessage('Sugiero que le destruyas dinero a la persona del otro grupo')">Sugiero que le destruyas dinero a la persona del otro grupo</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn custom-btn btn-block" type="button" onclick="selectMessage('No le destruyas dinero a la persona del otro grupo')">No le destruyas dinero a la persona del otro grupo</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn custom-btn btn-block" type="button" onclick="selectMessage('Debes destruirle dinero a la persona del otro grupo')">Debes destruirle dinero a la persona del otro grupo</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn custom-btn btn-block" type="button" onclick="selectMessage('Sugiero no destruir dinero a la persona del otro grupo')">Sugiero no destruir dinero a la persona del otro grupo</button>
+            </div>
+        </div>
+    </div>
+
+    <form method="post">
+        <input type="hidden" name="leader_message" id="leader_message" value="">
+
+        <br>
+
+
+    </form>
+
+    <script>
+        function selectMessage(message) {
+            document.getElementById("leader_message").value = message;
+            document.querySelector("form").submit();
+        }
+    </script>
+
+{{ endblock }}
+
+
+

@@ -1,0 +1,66 @@
+{{ block title }} 
+<h2 style="font-size: 34px;">Resultado ronda N°{{ player.round_number}} </h2>  
+{{ endblock }}
+
+{{ block content }}
+
+<style>
+    .custom-btn {
+        background-color: #4A148C; /* Púrpura más oscuro */
+        color: white;
+        margin-bottom: 15px; /* Espacio entre los botones */
+        width: 100%; /* Asegura que los botones ocupen toda la columna */
+        font-size: 20px; /* Tamaño del texto en los botones */
+        padding: 15px 20px; /* Aumenta el tamaño de los botones */
+        font-weight: bold; /* Aplica negrita al texto */
+    }
+
+    .custom-btn:hover {
+        background-color: #38006b; /* Púrpura aún más oscuro al pasar el ratón */
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .col-md-6 {
+        flex: 0 0 48%; /* Ajusta el ancho de las columnas para que ocupen la mitad del espacio */
+    }
+    
+    .result-box, .message-box {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .result-box {
+        background-color: #f8f9fa;
+    }
+
+    .message-box {
+        background-color: #f1f1f1;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-6">
+        <!-- Primera fila: Destrucción y Pago Final -->
+        <div class="result-box">
+            {{ if player.agresion_guardada == 0}}
+            <p style="font-size: 24px;">El líder del otro equipo <span style="color: red; font-size: 24px;">no te ha destruído dinero</span></strong> CLP</p>
+
+            {{ else }}
+
+            <p style="font-size: 24px;">El líder del otro equipo te ha destruido <strong><span style="color: red; font-size: 24px;"> ${{ player.agresion_guardada }}</span></strong> CLP</p>
+            {{ endif }}
+            <p style="font-size: 24px;">Tu pago final para esta ronda es <strong><span style="color: green; font-size: 24px;"> ${{ player.endownment_final }}</span></strong></p>
+        </div>
+
+
+{{ next_button }}
+
+{{ endblock }}
+

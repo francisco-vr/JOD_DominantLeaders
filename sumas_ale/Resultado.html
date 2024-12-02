@@ -1,0 +1,15 @@
+{{ block content }}
+<h3>En {{ C.TIME_OUT_SUMAS }} segundos obtuvo:</h3>
+
+{{ if player.buenas == 1 }}
+    <h3>{{player.buenas}} respuesta buena</h3>
+{{ else }}
+    <h3>{{player.buenas}} respuestas buenas</h3>
+{{ endif }}
+{{ if player.malas == 1 }}
+    <h3>{{player.malas}} respuesta mala</h3>
+{{ else }}
+    <h3>{{player.malas}} respuestas malas</h3>
+{{ endif }}
+
+{{ endblock }}

@@ -1,0 +1,136 @@
+{{ block title }}
+
+{{ if player.round_number == 7 }}
+
+<h1 style="font-size: 34px;"><strong>Cuestionario Intermedio</strong></h1>
+
+{{ endif }}
+
+
+
+{{ endblock }}
+
+
+{{ block content }}
+
+<p style="font-size: 24px;" align="justify">Ahora queremos que piense en su equipo. Por favor, indique cuántas 
+    personas, sin incluirse, cree que destruirán alguna de las siguientes cantidades de dinero. Si piensa que 
+    nadie realizará cierta acción, seleccione “0” en la pestaña.
+</p>
+
+<form>
+    <fieldset>
+        <table>
+            <tr>
+                <td align='left' width="30%"></td>
+                <td align='center' width="12%">Número</td>
+            </tr>
+            <tr><td colspan="8"><hr></td></tr>
+            <tr>
+                <td align='left'>Destruir $0</td>
+                <td align='center'>
+                    <select name='beliefs_1' id='beliefs_1' required>
+                        <option value='' disabled selected></option>
+                        <option value='0'>0</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="8"><hr></td></tr>
+            <tr>
+                <td align='left'>Destruir entre $100 y $1000</td>
+                <td align='center'>
+                    <select name='beliefs_2' id='beliefs_2' required>
+                        <option value='' disabled selected></option>
+                        <option value='0'>0</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="8"><hr></td></tr> 
+            <tr>
+                <td align='left'>Destruir entre $1100 y $2000</td>
+                <td align='center'>
+                    <select name='beliefs_3' id='beliefs_3' required>
+                        <option value='' disabled selected></option>
+                        <option value='0'>0</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="8"><hr></td></tr> 
+            <tr>
+                <td align='left'>Destruir entre $2100 y $3000</td>
+                <td align='center'>
+                    <select name='beliefs_4' id='beliefs_4' required>
+                        <option value='' disabled selected></option>
+                        <option value='0'>0</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="8"><hr></td></tr> 
+            <tr>
+                <td align='left'>Destruir entre $3100 y $4000</td>
+                <td align='center'>
+                    <select name='beliefs_5' id='beliefs_5' required>
+                        <option value='' disabled selected></option>
+                        <option value='0'>0</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="8"><hr></td></tr> 
+            <tr>
+                <td align='left'>Destruir entre $4100 y $5000</td>
+                <td align='center'>
+                    <select name='beliefs_6' id='beliefs_6' required>
+                        <option value='' disabled selected></option>
+                        <option value='0'>0</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="8"><hr></td></tr> 
+            <tr>
+                <td align='left'>Destruir entre $5100 y $6000</td>
+                <td align='center'>
+                    <select name='beliefs_7' id='beliefs_7' required>
+                        <option value='' disabled selected></option>
+                        <option value='0'>0</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="8"><hr></td></tr> 
+            <tr>
+                <td align='left'>Destruir entre $6100 y $7000</td>
+                <td align='center'>
+                    <select name='beliefs_8' id='beliefs_8' required>
+                        <option value='' disabled selected></option>
+                        <option value='0'>0</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+
+<br>
+<br>
+<br>
+
+
+{{ next_button }}
+
+
+{{ endblock }}

@@ -1,0 +1,21 @@
+{{ block title }}
+{{endblock  }}
+
+{{ block content }}
+
+
+<div class="mensaje-exito">
+    {{ if player.intentos_fallidos3 <= 2 }}
+    <p style="font-size: 24px; color:darkgreen"; align="justify"><strong>¡Correcto!</strong></p>
+    {{ else }}
+    <p style="font-size: 24px; color:darkgreen"; align="justify"><strong>Recuerde</strong></p>
+    {{ endif }}
+    <br>
+    <p style="font-size: 24px; "; align="justify"></strong>Su máximo de pago serían $5.000, pues se paga sólo una ronda, elegida al azar</p>
+</div>
+
+
+{{ next_button }}
+
+
+{{ endblock }}
